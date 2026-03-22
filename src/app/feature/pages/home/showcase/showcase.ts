@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { Contents } from './contents/contents';
 
 @Component({
   selector: 'urlf-showcase',
-  imports: [],
+  imports: [Contents],
   templateUrl: './showcase.html',
-  styleUrl: './showcase.css',
+  styleUrl: './showcase.scss',
 })
 export class Showcase {
 

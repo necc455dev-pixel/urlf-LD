@@ -1,6 +1,14 @@
 <div class="urlf-shell">
+  <urlf-side-nav
+    [opened]="isSideNavOpen()"
+    [items]="navItems"
+    title="Navigation"
+    (closed)="closeSideNav()"
+  />
+
   <header class="urlf-shell__header">
-    <div class="page-shell">
+    <div class="page-shell urlf-shell__header-inner">
+      <urlf-bento (pressed)="openSideNav()" />
       <urlf-breadcrumbs />
     </div>
   </header>

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-introductions',
   imports: [],
   templateUrl: './introductions.html',
-  styleUrl: './introductions.css',
+  styleUrl: './introductions.scss',
 })
 export class Introductions {
 

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-text-aria',
   imports: [],
   templateUrl: './text-aria.html',
-  styleUrl: './text-aria.css',
+  styleUrl: './text-aria.scss',
 })
 export class TextAria {
 

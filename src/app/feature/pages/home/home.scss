@@ -1,0 +1,33 @@
+.home-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.home-page__nav {
+  display: flex;
+  justify-content: flex-start;
+  position: sticky;
+  top: 5rem;
+  z-index: 5;
+}
+
+.home-page__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.home-page__section {
+  width: 100%;
+}
+
+.home-page__section > * {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .home-page__nav {
+    position: static;
+  }
+}
