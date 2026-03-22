@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-showcase',
+  selector: 'urlf-showcase',
   imports: [],
   templateUrl: './showcase.html',
   styleUrl: './showcase.css',

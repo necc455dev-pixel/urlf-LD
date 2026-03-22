@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.urlf-shell {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.urlf-shell__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+}
+
+.urlf-shell__main {
+  width: min(100%, var(--page-max-width));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-block: 1.5rem 3rem;
+}

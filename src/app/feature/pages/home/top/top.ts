@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-top',
+  selector: 'urlf-top',
   imports: [],
   templateUrl: './top.html',
   styleUrl: './top.css',

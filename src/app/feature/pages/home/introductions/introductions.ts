@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-introductions',
+  selector: 'urlf-introductions',
   imports: [],
   templateUrl: './introductions.html',
   styleUrl: './introductions.css',

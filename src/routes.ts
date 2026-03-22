@@ -5,6 +5,6 @@ import { Login } from './app/feature/pages/login/login';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: Home },
-  { path: 'login', component: Login },
+  { path: 'home', component: Home, title: 'Home' },
+  { path: 'login', component: Login, title: 'Login' },
 ];

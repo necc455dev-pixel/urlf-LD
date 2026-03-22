@@ -6,12 +6,12 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "urlf": {
+    "app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "urlf",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "urlf:build:production"
+              "buildTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "urlf:build:development"
+              "buildTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"

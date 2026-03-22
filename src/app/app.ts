@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Breadcrumbs } from './shared/ui/breadcrumbs/breadcrumbs';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
+  selector: 'urlf-root',
+  imports: [RouterOutlet, Breadcrumbs],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('urlf');
-}
+export class App {}

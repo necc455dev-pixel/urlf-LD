@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-contents',
+  selector: 'urlf-contents',
   imports: [],
   templateUrl: './contents.html',
   styleUrl: './contents.css',
