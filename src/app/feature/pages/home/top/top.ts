@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-top',
   imports: [],
   templateUrl: './top.html',
-  styleUrl: './top.css',
+  styleUrl: './top.scss',
 })
 export class Top {
 

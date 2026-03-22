@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-enrollment',
   imports: [],
   templateUrl: './enrollment.html',
-  styleUrl: './enrollment.css',
+  styleUrl: './enrollment.scss',
 })
 export class Enrollment {
 

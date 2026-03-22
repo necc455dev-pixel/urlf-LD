@@ -18,7 +18,7 @@ type BreadcrumbItem = {
   selector: 'urlf-breadcrumbs',
   imports: [RouterLink],
   templateUrl: './breadcrumbs.html',
-  styleUrl: './breadcrumbs.css',
+  styleUrl: './breadcrumbs.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Breadcrumbs {

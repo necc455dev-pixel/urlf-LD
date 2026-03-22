@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-contents',
   imports: [],
   templateUrl: './contents.html',
-  styleUrl: './contents.css',
+  styleUrl: './contents.scss',
 })
 export class Contents {
 

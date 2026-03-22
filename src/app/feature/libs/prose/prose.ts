@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-prose',
   imports: [],
   templateUrl: './prose.html',
-  styleUrl: './prose.css',
+  styleUrl: './prose.scss',
 })
 export class Prose {
 

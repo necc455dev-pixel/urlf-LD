@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'urlf-input',
   imports: [],
   templateUrl: './input.html',
-  styleUrl: './input.css',
+  styleUrl: './input.scss',
 })
 export class Input {
 
