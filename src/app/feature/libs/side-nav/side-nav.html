@@ -1,0 +1,32 @@
+@if (opened()) {
+  <button
+    type="button"
+    class="side-nav__backdrop"
+    aria-label="Close navigation"
+    (click)="close()"
+  ></button>
+}
+
+<aside class="side-nav" [class.side-nav--open]="opened()" [attr.aria-hidden]="!opened()">
+  <div class="side-nav__panel surface">
+    <div class="side-nav__header">
+      <p class="side-nav__eyebrow">{{ title() }}</p>
+      <button type="button" class="side-nav__close" aria-label="Close navigation" (click)="close()">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav aria-label="Side navigation" class="side-nav__nav">
+      <ul class="side-nav__list" role="list">
+        @for (item of items(); track item.href) {
+          <li>
+            <a [routerLink]="item.href" class="side-nav__link" (click)="close()">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</aside>

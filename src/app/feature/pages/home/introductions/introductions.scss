@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.introductions {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.introductions__header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.introductions__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.introductions__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.introductions__card {
+  padding: 1.2rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+}
+
+.introductions__card h3 {
+  margin-bottom: 0.5rem;
+}

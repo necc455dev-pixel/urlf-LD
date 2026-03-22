@@ -6,12 +6,19 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "urlf": {
+    "app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "urlf",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -22,10 +29,15 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "urlf.png",
+                "input": "public",
+                "output": "/"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ]
           },
           "configurations": {
@@ -56,10 +68,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "urlf:build:production"
+              "buildTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "urlf:build:development"
+              "buildTarget": "app:build:development"
             }
           },
           "defaultConfiguration": "development"
