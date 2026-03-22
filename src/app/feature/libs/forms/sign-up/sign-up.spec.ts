@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
-import { SignUp } from './sign-up';
+import { SignUpForm } from './sign-up';
 
-describe('SignUp', () => {
-  let component: SignUp;
-  let fixture: ComponentFixture<SignUp>;
+describe('SignUpForm', () => {
+  let component: SignUpForm;
+  let fixture: ComponentFixture<SignUpForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignUp]
+      imports: [SignUpForm],
+      providers: [provideHttpClientTesting()],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SignUp);
+    fixture = TestBed.createComponent(SignUpForm);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

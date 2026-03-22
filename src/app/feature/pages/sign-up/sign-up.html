@@ -1,0 +1,30 @@
+<section class="sign-up-page">
+  <div class="sign-up-page__layout">
+    <section class="sign-up-page__intro surface">
+      <p class="sign-up-page__eyebrow">Author onboarding</p>
+      <h1 class="sign-up-page__title">Create a storytelling account with a clean REST flow</h1>
+      <p class="sign-up-page__lead">
+        This page is wired for a resource-oriented signup API. New accounts are created as users,
+        then returned with verification metadata for the next step in onboarding.
+      </p>
+
+      <div class="sign-up-page__points">
+        <div>
+          <h2>What this feature includes</h2>
+          <p>Validated signup form, submission states, and a typed API client that posts to <code>/api/users</code>.</p>
+        </div>
+        <div>
+          <h2>API resources</h2>
+          <p>The REST contract lives under <code>resources/api</code> with OpenAPI and HTTP request examples.</p>
+        </div>
+      </div>
+
+      <p class="sign-up-page__link-row">
+        Already registered?
+        <a routerLink="/login">Go to login</a>
+      </p>
+    </section>
+
+    <urlf-sign-up-form />
+  </div>
+</section>

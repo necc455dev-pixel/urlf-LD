@@ -1,0 +1,112 @@
+:host {
+  display: block;
+}
+
+.sign-up-form {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+.sign-up-form__header {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sign-up-form__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted, #475569);
+}
+
+.sign-up-form__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.sign-up-form__lead {
+  color: var(--color-muted, #475569);
+}
+
+.sign-up-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.sign-up-form__field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sign-up-form__field--full {
+  grid-column: 1 / -1;
+}
+
+.sign-up-form__field > span,
+.sign-up-form__checkbox {
+  font-weight: 600;
+}
+
+.sign-up-form__field input,
+.sign-up-form__field textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 0.9rem;
+  background: var(--color-surface, #ffffff);
+}
+
+.sign-up-form__field textarea {
+  resize: vertical;
+}
+
+.sign-up-form__field small,
+.sign-up-form__message {
+  color: var(--color-muted, #475569);
+}
+
+.sign-up-form__checkbox {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.sign-up-form__checkbox input {
+  margin-top: 0.2rem;
+}
+
+.sign-up-form__message--error {
+  color: #b91c1c;
+}
+
+.sign-up-form__message--success {
+  color: #166534;
+}
+
+.sign-up-form__actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sign-up-form__actions button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  cursor: pointer;
+}
+
+.sign-up-form__actions button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+@media (max-width: 767px) {
+  .sign-up-form__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
