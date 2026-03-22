@@ -1,0 +1,151 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.prose-sheet {
+  --prose-paper: #fffefb;
+  --prose-ink: #2f3441;
+  --prose-muted: #667085;
+  --prose-rule: rgb(110 144 194 / 0.24);
+  --prose-header-rule: rgb(91 149 223 / 0.55);
+  --prose-edge: rgb(71 85 105 / 0.1);
+  --prose-line-height: 2.05rem;
+  --prose-padding-x: clamp(1.25rem, 4vw, 3rem);
+  --prose-padding-y: clamp(1.5rem, 4vw, 2.5rem);
+
+  position: relative;
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  border: 1px solid var(--prose-edge);
+  border-radius: 1rem;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--prose-line-height) - 2px),
+      var(--prose-rule) calc(var(--prose-line-height) - 2px),
+      var(--prose-rule) var(--prose-line-height)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3.5rem,
+      var(--prose-header-rule) 3.5rem,
+      var(--prose-header-rule) calc(3.5rem + 2px),
+      transparent calc(3.5rem + 2px)
+    ),
+    linear-gradient(180deg, #ffffff 0%, var(--prose-paper) 100%);
+  background-size: 100% var(--prose-line-height), 100% 100%, 100% 100%;
+  box-shadow:
+    0 1px 2px rgb(15 23 42 / 0.04),
+    0 18px 50px rgb(15 23 42 / 0.07);
+  color: var(--prose-ink);
+}
+
+.prose-sheet::before {
+  content: '';
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgb(91 149 223 / 0.65);
+  border-radius: 0.125rem;
+  opacity: 0.7;
+}
+
+.prose-sheet__inner {
+  min-height: 24rem;
+  padding:
+    calc(var(--prose-padding-y) + 1.5rem)
+    var(--prose-padding-x)
+    var(--prose-padding-y);
+}
+
+.prose-sheet__inner > :first-child {
+  margin-top: 0;
+}
+
+.prose-sheet__inner > :last-child {
+  margin-bottom: 0;
+}
+
+.prose-sheet__inner :where(h1, h2, h3, h4) {
+  margin: 0 0 1.25rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: #1f2937;
+}
+
+.prose-sheet__inner :where(h1) {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+}
+
+.prose-sheet__inner :where(h2) {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.prose-sheet__inner :where(p, li, blockquote) {
+  margin: 0 0 1rem;
+  font-size: clamp(1rem, 0.94rem + 0.2vw, 1.08rem);
+  line-height: 1.95;
+  letter-spacing: 0.015em;
+}
+
+.prose-sheet__inner :where(p) {
+  text-wrap: pretty;
+}
+
+.prose-sheet__inner :where(ul, ol) {
+  margin: 0 0 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-sheet__inner :where(li + li) {
+  margin-top: 0.45rem;
+}
+
+.prose-sheet__inner :where(strong) {
+  font-weight: 700;
+}
+
+.prose-sheet__inner :where(em) {
+  font-style: italic;
+}
+
+.prose-sheet__inner :where(blockquote) {
+  padding-left: 1rem;
+  border-left: 3px solid rgb(91 149 223 / 0.35);
+  color: var(--prose-muted);
+}
+
+.prose-sheet__inner :where(hr) {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid rgb(71 85 105 / 0.15);
+}
+
+@media (max-width: 767px) {
+  .prose-sheet {
+    --prose-line-height: 1.85rem;
+    border-radius: 0.75rem;
+  }
+
+  .prose-sheet::before {
+    top: 1rem;
+    left: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .prose-sheet__inner {
+    min-height: 18rem;
+    padding-top: calc(var(--prose-padding-y) + 1.25rem);
+  }
+
+  .prose-sheet__inner :where(p, li, blockquote) {
+    line-height: 1.85;
+  }
+}
