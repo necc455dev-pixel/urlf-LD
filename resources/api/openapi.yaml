@@ -1,0 +1,183 @@
+openapi: 3.1.0
+info:
+  title: Urlf Signup API
+  version: 1.0.0
+  summary: REST resources for account signup
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/users:
+    post:
+      operationId: createUser
+      summary: Create a new user account
+      description: Creates a writer account and starts the email verification flow.
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreateRequest'
+            examples:
+              default:
+                value:
+                  displayName: Aki Tanaka
+                  penName: Moonlit Author
+                  email: writer@example.com
+                  password: super-secret-passphrase
+                  bio: I write emotional mystery stories.
+                  agreeToTerms: true
+      responses:
+        '201':
+          description: User account created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResource'
+              examples:
+                default:
+                  value:
+                    id: usr_01hxyexample
+                    displayName: Aki Tanaka
+                    penName: Moonlit Author
+                    email: writer@example.com
+                    bio: I write emotional mystery stories.
+                    status: pending_verification
+                    createdAt: '2026-03-22T09:00:00Z'
+                    links:
+                      self: /api/users/usr_01hxyexample
+                      verifyEmail: /api/users/usr_01hxyexample/email-verification
+        '409':
+          description: Email already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Validation failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/users/{userId}:
+    get:
+      operationId: getUser
+      summary: Fetch a created user resource
+      tags:
+        - Users
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResource'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    UserCreateRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - displayName
+        - penName
+        - email
+        - password
+        - agreeToTerms
+      properties:
+        displayName:
+          type: string
+          minLength: 1
+          maxLength: 40
+        penName:
+          type: string
+          minLength: 1
+          maxLength: 40
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 12
+        bio:
+          type: string
+          maxLength: 280
+        agreeToTerms:
+          type: boolean
+          const: true
+    UserResource:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - displayName
+        - penName
+        - email
+        - bio
+        - status
+        - createdAt
+        - links
+      properties:
+        id:
+          type: string
+        displayName:
+          type: string
+        penName:
+          type: string
+        email:
+          type: string
+          format: email
+        bio:
+          type: string
+        status:
+          type: string
+          enum:
+            - pending_verification
+            - active
+        createdAt:
+          type: string
+          format: date-time
+        links:
+          type: object
+          additionalProperties: false
+          required:
+            - self
+            - verifyEmail
+          properties:
+            self:
+              type: string
+            verifyEmail:
+              type: string
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - message
+      properties:
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required:
+              - field
+              - message
+            properties:
+              field:
+                type: string
+              message:
+                type: string

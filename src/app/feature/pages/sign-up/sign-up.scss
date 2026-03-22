@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+
+.sign-up-page {
+  display: grid;
+}
+
+.sign-up-page__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.sign-up-page__intro {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+}
+
+.sign-up-page__eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted, #475569);
+}
+
+.sign-up-page__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+
+.sign-up-page__lead,
+.sign-up-page__points p,
+.sign-up-page__link-row {
+  color: var(--color-muted, #475569);
+}
+
+.sign-up-page__points {
+  display: grid;
+  gap: 1rem;
+}
+
+.sign-up-page__points h2 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.sign-up-page__link-row a {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+@media (max-width: 991px) {
+  .sign-up-page__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

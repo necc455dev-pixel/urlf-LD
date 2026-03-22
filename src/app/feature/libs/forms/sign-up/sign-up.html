@@ -1,1 +1,99 @@
-<p>sign-up works!</p>
+<form class="sign-up-form surface" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div class="sign-up-form__header">
+    <div>
+      <p class="sign-up-form__eyebrow">Create your writer account</p>
+      <h2 class="sign-up-form__title">Start publishing in a few steps</h2>
+    </div>
+    <p class="sign-up-form__lead">
+      Your account is created through the REST endpoint at <code>/api/users</code>.
+    </p>
+  </div>
+
+  <div class="sign-up-form__grid">
+    <label class="sign-up-form__field">
+      <span>Display name</span>
+      <input type="text" formControlName="displayName" placeholder="Aki Tanaka" autocomplete="name" />
+      @if (showError('displayName')) {
+        <small>Please enter a display name.</small>
+      }
+    </label>
+
+    <label class="sign-up-form__field">
+      <span>Pen name</span>
+      <input type="text" formControlName="penName" placeholder="Moonlit Author" autocomplete="nickname" />
+      @if (showError('penName')) {
+        <small>Please enter a pen name.</small>
+      }
+    </label>
+
+    <label class="sign-up-form__field sign-up-form__field--full">
+      <span>Email</span>
+      <input type="email" formControlName="email" placeholder="writer@example.com" autocomplete="email" />
+      @if (showError('email')) {
+        <small>Please enter a valid email address.</small>
+      }
+    </label>
+
+    <label class="sign-up-form__field">
+      <span>Password</span>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="At least 12 characters"
+        autocomplete="new-password"
+      />
+      @if (showError('password')) {
+        <small>Password must be at least {{ passwordMinLength }} characters.</small>
+      }
+    </label>
+
+    <label class="sign-up-form__field">
+      <span>Confirm password</span>
+      <input
+        type="password"
+        formControlName="confirmPassword"
+        placeholder="Repeat your password"
+        autocomplete="new-password"
+      />
+      @if (passwordMismatch()) {
+        <small>Passwords do not match.</small>
+      }
+    </label>
+
+    <label class="sign-up-form__field sign-up-form__field--full">
+      <span>Bio</span>
+      <textarea
+        formControlName="bio"
+        rows="5"
+        maxlength="280"
+        placeholder="Tell readers what kind of stories you write."
+      ></textarea>
+      <small>{{ form.controls.bio.value.length }}/280</small>
+    </label>
+  </div>
+
+  <label class="sign-up-form__checkbox">
+    <input type="checkbox" formControlName="agreeToTerms" />
+    <span>I agree to the terms of service and email verification flow.</span>
+  </label>
+
+  @if (showError('agreeToTerms')) {
+    <p class="sign-up-form__message sign-up-form__message--error">You must agree before creating an account.</p>
+  }
+
+  @if (errorMessage()) {
+    <p class="sign-up-form__message sign-up-form__message--error">{{ errorMessage() }}</p>
+  }
+
+  @if (createdAccount(); as account) {
+    <p class="sign-up-form__message sign-up-form__message--success">
+      Account created for {{ account.displayName }}. Verification status: {{ account.status }}.
+    </p>
+  }
+
+  <div class="sign-up-form__actions">
+    <button type="submit" [disabled]="isSubmitting()">
+      {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
+    </button>
+  </div>
+</form>

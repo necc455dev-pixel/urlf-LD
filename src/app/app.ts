@@ -11,11 +11,11 @@ import { SideNavItem } from './feature/libs/side-nav/side-nav';
   styleUrl: './app.scss',
 })
 export class App {
-  
   protected readonly isSideNavOpen = signal(false);
   protected readonly navItems: readonly SideNavItem[] = [
     { label: 'Home', href: '/home' },
     { label: 'Login', href: '/login' },
+    { label: 'Sign up', href: '/sign-up' },
   ];
 
   protected openSideNav(): void {
