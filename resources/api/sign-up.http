@@ -1,0 +1,17 @@
+### Create a user account
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "displayName": "Aki Tanaka",
+  "penName": "Moonlit Author",
+  "email": "writer@example.com",
+  "password": "super-secret-passphrase",
+  "bio": "I write emotional mystery stories.",
+  "agreeToTerms": true
+}
+
+### Fetch the created user resource
+GET http://localhost:3000/api/users/usr_01hxyexample
+Accept: application/json
