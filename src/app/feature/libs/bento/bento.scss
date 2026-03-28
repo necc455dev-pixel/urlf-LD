@@ -6,14 +6,19 @@
   display: inline-grid;
   gap: 0.3rem;
   place-items: center;
+  appearance: none;
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.4rem;
+  cursor: pointer;
+  transition: opacity 160ms ease;
+}
+
+.bento-button--icon-only {
   border: 0;
   border-radius: 0;
   background: transparent;
-  cursor: pointer;
-  transition: opacity 160ms ease;
+  box-shadow: none;
 }
 
 .bento-button:hover {
