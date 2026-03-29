@@ -13,7 +13,7 @@
   height: 100dvh;
   overflow: hidden;
   background: #fff;
-  animation: wellcome-fade-out 700ms ease 2.3s forwards;
+  animation: wellcome-fade-out 900ms ease 3.15s forwards;
 }
 
 .wellcome-screen--image-only {
@@ -28,7 +28,7 @@
   filter: none;
   animation:
     wellcome-float-up 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-    wellcome-image-fade 1100ms ease 1.95s forwards;
+    wellcome-image-fade 2000ms ease 1.95s forwards;
 }
 
 @keyframes wellcome-float-up {

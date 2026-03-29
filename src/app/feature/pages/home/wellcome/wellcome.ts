@@ -13,7 +13,7 @@ export class Wellcome {
   ngOnInit(): void {
     this.timerId = window.setTimeout(() => {
       this.finished.emit();
-    }, 3100);
+    }, 4200);
   }
 
   ngOnDestroy(): void {
