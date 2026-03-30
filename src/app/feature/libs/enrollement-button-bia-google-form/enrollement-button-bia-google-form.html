@@ -1,0 +1,19 @@
+@if (href()) {
+  <a
+    class="enrollement-button-bia-google-form"
+    [href]="href()"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span>{{ label() }}</span>
+    <span class="enrollement-button-bia-google-form__icon" aria-hidden="true">↗</span>
+  </a>
+} @else {
+  <span
+    class="enrollement-button-bia-google-form enrollement-button-bia-google-form--disabled"
+    aria-disabled="true"
+  >
+    <span>{{ label() }}</span>
+    <span class="enrollement-button-bia-google-form__icon" aria-hidden="true">↗</span>
+  </span>
+}

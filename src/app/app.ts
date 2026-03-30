@@ -3,6 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { Breadcrumbs } from './shared/ui/breadcrumbs/breadcrumbs';
 import { LibsModule } from "./feature/libs/libs";
 import { SideNavItem } from './feature/libs/side-nav/side-nav';
+import { GOOGLE_FORM_ENROLLMENT_URL } from './shared/external-links';
 
 @Component({
   selector: 'urlf-root',
@@ -12,11 +13,13 @@ import { SideNavItem } from './feature/libs/side-nav/side-nav';
 })
 export class App {
   protected readonly isSideNavOpen = signal(false);
+  protected readonly enrollmentFormUrl = GOOGLE_FORM_ENROLLMENT_URL;
   protected readonly navItems: readonly SideNavItem[] = [
-    { label: 'Home', href: '/home' },
-    { label: 'Login', href: '/login' },
-    { label: 'My page', href: '/mypage' },
-    { label: 'Sign up', href: '/sign-up' },
+    { label: '§トップページ', href: '/home' },
+    { label: '§ログイン', href: '/login' },
+    { label: '§マイページ', href: '/mypage' },
+    { label: '§登録', href: '/sign-up' },
+    { label: '§お申込み', href: '/sign-up' },
   ];
 
   protected openSideNav(): void {
