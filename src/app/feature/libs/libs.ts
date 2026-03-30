@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { Bento } from './bento/bento';
+import { EnrollementButtonBiaGoogleForm } from './enrollement-button-bia-google-form/enrollement-button-bia-google-form';
 import { Enrollment } from './forms/enrollment/enrollment';
 import { Login } from './forms/login/login';
 import { SignUpForm } from './forms/sign-up/sign-up';
@@ -9,7 +10,17 @@ import { Prose } from './prose/prose';
 import { SideNav } from './side-nav/side-nav';
 import { TextAria } from './text-aria/text-aria';
 
-const LIB_COMPONENTS = [Bento, Enrollment, Login, SignUpForm, Input, Prose, SideNav, TextAria] as const;
+const LIB_COMPONENTS = [
+  Bento,
+  EnrollementButtonBiaGoogleForm,
+  Enrollment,
+  Login,
+  SignUpForm,
+  Input,
+  Prose,
+  SideNav,
+  TextAria,
+] as const;
 
 @NgModule({
   imports: [...LIB_COMPONENTS],
@@ -18,6 +29,7 @@ const LIB_COMPONENTS = [Bento, Enrollment, Login, SignUpForm, Input, Prose, Side
 export class LibsModule {}
 
 export { Bento } from './bento/bento';
+export { EnrollementButtonBiaGoogleForm } from './enrollement-button-bia-google-form/enrollement-button-bia-google-form';
 export { Enrollment } from './forms/enrollment/enrollment';
 export { Login } from './forms/login/login';
 export { SignUpForm } from './forms/sign-up/sign-up';

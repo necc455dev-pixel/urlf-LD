@@ -19,7 +19,7 @@
 
 .urlf-shell__header-inner {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 0.75rem;
   min-height: 4.5rem;
@@ -58,7 +58,8 @@
 
 @media (max-width: 767px) {
   .urlf-shell__header-inner {
-    min-height: 4rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 0.5rem;
+    min-height: 4rem;
   }
 }
