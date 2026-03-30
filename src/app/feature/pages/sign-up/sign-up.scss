@@ -8,15 +8,39 @@
 
 .sign-up-page__layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  align-items: stretch;
 }
 
 .sign-up-page__intro {
   display: grid;
-  gap: 1.5rem;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 1.75rem;
   padding: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  background:
+    radial-gradient(circle at top left, rgb(147 197 253 / 0.18), transparent 34%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.96), rgb(248 250 252 / 0.98));
+}
+
+.sign-up-page__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 2rem;
+  padding-inline: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgb(191 219 254 / 0.9);
+  background: rgb(239 246 255 / 0.92);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.sign-up-page__copy {
+  display: grid;
+  gap: 0.9rem;
 }
 
 .sign-up-page__eyebrow {
@@ -28,12 +52,13 @@
 }
 
 .sign-up-page__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
 }
 
 .sign-up-page__lead,
-.sign-up-page__points p,
+.sign-up-page__point p,
 .sign-up-page__link-row {
   color: var(--color-muted, #475569);
 }
@@ -43,14 +68,36 @@
   gap: 1rem;
 }
 
-.sign-up-page__points h2 {
+.sign-up-page__point {
+  padding: 1rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--color-border, #cbd5e1) 75%, transparent);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 0.72);
+}
+
+.sign-up-page__point h2 {
   margin-bottom: 0.35rem;
   font-size: 1rem;
+}
+
+.sign-up-page__footer {
+  padding-top: 0.25rem;
 }
 
 .sign-up-page__link-row a {
   font-weight: 700;
   color: #2563eb;
+}
+
+.sign-up-page__form {
+  display: block;
+  width: 100%;
+}
+
+.sign-up-page__form > * {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 991px) {

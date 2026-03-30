@@ -1,0 +1,65 @@
+:host {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: block;
+}
+
+.wellcome-screen {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: #fff;
+  animation: wellcome-fade-out 900ms ease 3.15s forwards;
+}
+
+.wellcome-screen--image-only {
+  background: #fff;
+}
+
+.wellcome-screen__image {
+  position: relative;
+  width: min(76vw, 34rem);
+  max-height: 72dvh;
+  object-fit: contain;
+  filter: none;
+  animation:
+    wellcome-float-up 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    wellcome-image-fade 2000ms ease 1.95s forwards;
+}
+
+@keyframes wellcome-float-up {
+  from {
+    opacity: 0;
+    transform: translateY(44px) scale(0.92);
+    filter: blur(10px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.01);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes wellcome-image-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes wellcome-fade-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

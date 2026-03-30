@@ -19,10 +19,34 @@
 
 .urlf-shell__header-inner {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.75rem;
   min-height: 4.5rem;
+}
+
+.urlf-shell__icon-action {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.4rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.urlf-shell__icon-action:hover {
+  opacity: 0.72;
+}
+
+.urlf-shell__icon-image {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .urlf-shell__main {
