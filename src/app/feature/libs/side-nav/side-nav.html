@@ -10,7 +10,7 @@
 <aside class="side-nav" [class.side-nav--open]="opened()" [attr.aria-hidden]="!opened()">
   <div class="side-nav__panel surface">
     <div class="side-nav__header">
-      <p class="side-nav__eyebrow">{{ title() }}</p>
+      <p class="side-nav__eyebrow">§{{ title() }}</p>
       <button type="button" class="side-nav__close" aria-label="Close navigation" (click)="close()">
         <span></span>
         <span></span>
@@ -22,7 +22,7 @@
         @for (item of items(); track item.href) {
           <li>
             <a [routerLink]="item.href" class="side-nav__link" (click)="close()">
-              {{ item.label }}
+              §{{ item.label }}
             </a>
           </li>
         }

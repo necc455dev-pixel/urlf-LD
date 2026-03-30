@@ -7,8 +7,8 @@ import { SignUp } from './app/feature/pages/sign-up/sign-up';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: Home, title: 'Home' },
-  { path: 'login', component: Login, title: 'Login' },
-  { path: 'mypage', component: Mypage, title: 'My page' },
-  { path: 'sign-up', component: SignUp, title: 'Sign up' },
+  { path: 'home', component: Home, title: 'トップ' },
+  { path: 'login', component: Login, title: 'ログイン' },
+  { path: 'mypage', component: Mypage, title: 'マイページ' },
+  { path: 'sign-up', component: SignUp, title: '申し込み' },
 ];

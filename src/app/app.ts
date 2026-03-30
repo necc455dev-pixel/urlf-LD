@@ -13,10 +13,11 @@ import { SideNavItem } from './feature/libs/side-nav/side-nav';
 export class App {
   protected readonly isSideNavOpen = signal(false);
   protected readonly navItems: readonly SideNavItem[] = [
-    { label: 'Home', href: '/home' },
-    { label: 'Login', href: '/login' },
-    { label: 'My page', href: '/mypage' },
-    { label: 'Sign up', href: '/sign-up' },
+    { label: '§トップページ', href: '/home' },
+    { label: '§ログイン', href: '/login' },
+    { label: '§マイページ', href: '/mypage' },
+    { label: '§登録', href: '/sign-up' },
+    { label: '§お申込み', href: '/sign-up' },
   ];
 
   protected openSideNav(): void {
