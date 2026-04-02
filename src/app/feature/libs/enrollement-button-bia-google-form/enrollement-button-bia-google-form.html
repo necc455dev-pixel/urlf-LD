@@ -1,4 +1,9 @@
-@if (href()) {
+@if (!termsAccepted()) {
+  <a class="enrollement-button-bia-google-form" routerLink="/terms">
+    <span>{{ label() }}</span>
+    <span class="enrollement-button-bia-google-form__icon" aria-hidden="true">→</span>
+  </a>
+} @else if (hasExternalForm()) {
   <a
     class="enrollement-button-bia-google-form"
     [href]="href()"
