@@ -8,7 +8,7 @@
 
   <header class="urlf-shell__header">
     <div class="page-shell urlf-shell__header-inner">
-      <urlf-bento (pressed)="openSideNav()" />
+      <urlf-bento [opened]="isSideNavOpen()" (pressed)="openSideNav()" />
       <urlf-breadcrumbs />
       <urlf-enrollement-button-bia-google-form [href]="enrollmentFormUrl" label="申し込む" />
       <a

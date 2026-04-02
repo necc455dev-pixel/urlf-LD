@@ -4,7 +4,9 @@
   aria-label="Open navigation"
   (click)="onPress()"
 >
-  <span class="bento-button__line"></span>
-  <span class="bento-button__line"></span>
-  <span class="bento-button__line"></span>
+  <img
+    [src]="opened() ? '/libs/nav/hanberger-opened.svg' : '/libs/nav/hamberger-closed.svg'"
+    alt=""
+    class="bento-button__icon"
+  />
 </button>
