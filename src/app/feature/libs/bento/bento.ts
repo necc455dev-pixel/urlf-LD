@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'urlf-bento',
@@ -7,6 +7,7 @@ import { Component, output } from '@angular/core';
   styleUrl: './bento.scss',
 })
 export class Bento {
+  readonly opened = input(false);
   readonly pressed = output<void>();
 
   protected onPress(): void {
