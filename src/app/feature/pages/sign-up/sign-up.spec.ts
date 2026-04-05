@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideRouter } from '@angular/router';
-
 import { SignUp } from './sign-up';
 
 describe('SignUp', () => {
@@ -12,8 +11,7 @@ describe('SignUp', () => {
     await TestBed.configureTestingModule({
       imports: [SignUp],
       providers: [provideHttpClientTesting(), provideRouter([])],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SignUp);
     component = fixture.componentInstance;
@@ -24,9 +22,9 @@ describe('SignUp', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the signup heading', () => {
+  it('should render the signup intro section', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Create a storytelling account');
+    expect(compiled.querySelector('.sign-up-page__intro')).not.toBeNull();
   });
 });

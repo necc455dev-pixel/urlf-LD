@@ -10,15 +10,7 @@
     <div class="page-shell urlf-shell__header-inner">
       <urlf-bento [opened]="isSideNavOpen()" (pressed)="openSideNav()" />
       <urlf-breadcrumbs />
-      <urlf-enrollement-button-bia-google-form [href]="enrollmentFormUrl" label="申し込む" />
-      <a
-        routerLink="/login"
-        class="urlf-shell__icon-action urlf-shell__icon-action--google"
-        aria-label="Sign in with Google"
-        title="Sign in"
-      >
-        <img src="/google-signin-mark.svg" alt="" class="urlf-shell__icon-image" />
-      </a>
+      <urlf-enrollement-button-bia-google-form label="申し込む" />
     </div>
   </header>
 

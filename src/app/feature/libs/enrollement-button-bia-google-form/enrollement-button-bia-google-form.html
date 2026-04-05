@@ -1,24 +1,4 @@
-@if (!termsAccepted()) {
-  <a class="enrollement-button-bia-google-form" routerLink="/terms">
-    <span>{{ label() }}</span>
-    <span class="enrollement-button-bia-google-form__icon" aria-hidden="true">→</span>
-  </a>
-} @else if (hasExternalForm()) {
-  <a
-    class="enrollement-button-bia-google-form"
-    [href]="href()"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span>{{ label() }}</span>
-    <span class="enrollement-button-bia-google-form__icon" aria-hidden="true">↗</span>
-  </a>
-} @else {
-  <span
-    class="enrollement-button-bia-google-form enrollement-button-bia-google-form--disabled"
-    aria-disabled="true"
-  >
-    <span>{{ label() }}</span>
-    <span class="enrollement-button-bia-google-form__icon" aria-hidden="true">↗</span>
-  </span>
-}
+<a class="enrollement-button-bia-google-form" routerLink="/terms">
+  <span>{{ label() }}</span>
+  <img src="/libs/submit/submit-button.svg" alt="" class="enrollement-button-bia-google-form__icon" />
+</a>
