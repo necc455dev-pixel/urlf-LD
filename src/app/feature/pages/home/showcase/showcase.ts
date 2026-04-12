@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contents } from './contents/contents';
+import { Contents } from "./contents/contents";
 
 @Component({
   selector: 'urlf-showcase',

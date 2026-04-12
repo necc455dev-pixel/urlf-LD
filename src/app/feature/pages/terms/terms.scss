@@ -3,14 +3,13 @@
 }
 
 .terms-page {
-  display: grid;
+  display: block;
 }
 
-.terms-page__layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
+.terms-page__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .terms-page__intro,
@@ -19,7 +18,8 @@
 }
 
 .terms-page__intro {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1.25rem;
 }
 
@@ -49,6 +49,17 @@
   border: 1px solid color-mix(in srgb, #bfdbfe 80%, white);
 }
 
+.terms-page__checkbox {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+.terms-page__checkbox input {
+  margin-top: 0.2rem;
+}
+
 .terms-page__actions {
   display: flex;
   flex-wrap: wrap;
@@ -76,15 +87,16 @@
   color: #2563eb;
 }
 
-.terms-page__document-inner {
-  max-height: min(72dvh, 48rem);
-  overflow: auto;
-  padding-right: 0.4rem;
+.terms-page__article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.terms-page__article {
-  display: grid;
-  gap: 1rem;
+.terms-page__article section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
 .terms-page__article h2 {
@@ -95,14 +107,4 @@
 .terms-page__footer-note {
   padding-top: 1rem;
   font-weight: 700;
-}
-
-@media (max-width: 991px) {
-  .terms-page__layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .terms-page__document-inner {
-    max-height: 32rem;
-  }
 }

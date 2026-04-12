@@ -38,8 +38,10 @@
 }
 
 .enrollement-button-bia-google-form__icon {
-  font-size: 0.9rem;
-  line-height: 1;
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 767px) {
