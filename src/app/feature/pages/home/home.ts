@@ -9,7 +9,7 @@ import { Wellcome } from './wellcome/wellcome';
 
 @Component({
   selector: 'urlf-home',
-  imports: [Prose, Top, Introductions, Showcase, Wellcome],
+  imports: [Top, Introductions, Showcase, Wellcome],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
