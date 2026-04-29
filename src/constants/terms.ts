@@ -6,8 +6,6 @@ export type TermsSection = {
 export const TERMS_PAGE_COPY = {
   eyebrow: 'Terms of service',
   title: '利用規約を確認してから申し込みへ進みます。',
-  lead:
-    '申し込みフォームへ進む前に、利用条件と運営方針を最後まで確認してください。最後までスクロールすると申し込みボタンが有効になります。',
   reachedEndMessage: '利用規約の最後まで到達しました。申し込みへ進めます。',
   pendingMessage: 'まずは利用規約を最後までお読みください。',
   acceptButtonLabel: '利用規約に同意して申し込む',
