@@ -1,32 +1,29 @@
-<section class="contents-plans">
-  <div class="contents-plans__header">
-    <p class="contents-plans__eyebrow">Plans</p>
-    <h3 class="contents-plans__title">選べるプラン</h3>
-    <p class="contents-plans__lead">
-      どんなサポートが受けられるかを、プランごとに一目で比較できるようにしています。
-    </p>
-  </div>
+<div class="contents-grid">
+  @for (plan of plans; track plan.id) {
+    <article class="contents-card" [class.contents-card--featured]="plan.featured">
+      @if (plan.featured) {
+        <span class="contents-card__badge">人気</span>
+      }
 
-  <div class="contents-grid">
-    <article class="contents-card">
-      <div class="contents-card__plan-badge">メッセージプラン</div>
-      <p class="contents-card__description">
-        まずは作品の方向性だけ固めたい人向け。短いやりとりで読み味や見せ方の軸を整理します。
+      <h3 class="contents-card__name">{{ plan.nameJa }}</h3>
+      <p class="contents-card__name-en">{{ plan.nameEn }}</p>
+
+      <p class="contents-card__price">
+        <strong>{{ plan.priceLabel }}</strong>円
+      </p>
+      <p class="contents-card__tax">税込・送料込</p>
+
+      <span class="contents-card__divider" aria-hidden="true"></span>
+
+      <p class="contents-card__volume-label">VOLUME</p>
+      <p class="contents-card__volume">{{ plan.volumeLabel }}</p>
+
+      <p class="contents-card__description">{{ plan.description }}</p>
+
+      <p class="contents-card__for">
+        <span class="contents-card__for-label">こんな方へ</span>
+        {{ plan.forWhom }}
       </p>
     </article>
-
-    <article class="contents-card">
-      <div class="contents-card__plan-badge">スタンダードプラン</div>
-      <p class="contents-card__description">
-        読みやすさ、流れ、印象の残り方まで含めて、作品全体の伝わり方を丁寧に整えるプランです。
-      </p>
-    </article>
-
-    <article class="contents-card">
-      <div class="contents-card__plan-badge">長編プラン</div>
-      <p class="contents-card__description">
-        長い物語や大きな構成を扱う前提で、世界観とダイナミクスを崩さずに完成度を高めていきます。
-      </p>
-    </article>
-  </div>
-</section>
+  }
+</div>

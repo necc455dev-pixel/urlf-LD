@@ -1,0 +1,24 @@
+<section class="flow">
+  <div class="flow__inner">
+    <div class="flow__header">
+      <span class="flow__eyebrow">FLOW</span>
+      <h2 class="flow__title">本ができるまで</h2>
+      <p class="flow__lead">
+        お申込みからお届けまで。<br />
+        ヒアリングは <strong>一回のみ</strong>、リモート / 訪問どちらかをお選びいただけます。
+      </p>
+    </div>
+
+    <ol class="flow__list">
+      @for (step of steps; track step.id) {
+        <li class="flow__item">
+          <span class="flow__num">{{ step.id }}</span>
+          <div class="flow__body">
+            <h3 class="flow__step-title">{{ step.title }}</h3>
+            <p class="flow__step-desc">{{ step.description }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

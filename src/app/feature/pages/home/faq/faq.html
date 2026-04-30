@@ -1,0 +1,17 @@
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <span class="faq__eyebrow">FAQ</span>
+      <h2 class="faq__title">よくあるご質問</h2>
+    </div>
+
+    <dl class="faq__list">
+      @for (item of items; track item.id) {
+        <div class="faq__item">
+          <dt class="faq__question">{{ item.question }}</dt>
+          <dd class="faq__answer">{{ item.answer }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>
