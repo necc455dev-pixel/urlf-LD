@@ -1,20 +1,29 @@
 <div class="contents-grid">
-  <article class="contents-card">
-    <p class="contents-card__meta">メッセージプラン</p>
-    <h3>文字数目安～1万文字程度</h3>
-    <p>一つ一つのフレーズに余白を持たせ、読み手に豊かな解釈の余地を残します。</p>
-  </article>
+  @for (plan of plans; track plan.id) {
+    <article class="contents-card" [class.contents-card--featured]="plan.featured">
+      @if (plan.featured) {
+        <span class="contents-card__badge">人気</span>
+      }
 
-  <article class="contents-card">
-    <p class="contents-card__meta"></p>
-    <h3>文字数目安1万から2万文字</h3>
-    <p>登場人物は1～6人。読み手が手に取りやすく、あなたの物語を簡潔に伝えます。</p>
-    <p></p>
-  </article>
+      <h3 class="contents-card__name">{{ plan.nameJa }}</h3>
+      <p class="contents-card__name-en">{{ plan.nameEn }}</p>
 
-  <article class="contents-card">
-    <p class="contents-card__meta">長編プラン</p>
-    <h3>文字数目安:2万から10万文字</h3>
-    <p>細かい描写とダイナミックな文章構成であなたの物語を余すことなく伝えます。</p>
-  </article>
+      <p class="contents-card__price">
+        <strong>{{ plan.priceLabel }}</strong>円
+      </p>
+      <p class="contents-card__tax">税込・送料込</p>
+
+      <span class="contents-card__divider" aria-hidden="true"></span>
+
+      <p class="contents-card__volume-label">VOLUME</p>
+      <p class="contents-card__volume">{{ plan.volumeLabel }}</p>
+
+      <p class="contents-card__description">{{ plan.description }}</p>
+
+      <p class="contents-card__for">
+        <span class="contents-card__for-label">こんな方へ</span>
+        {{ plan.forWhom }}
+      </p>
+    </article>
+  }
 </div>

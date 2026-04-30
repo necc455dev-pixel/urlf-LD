@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TERMS_PAGE_COPY, TERMS_SECTIONS } from '../../../../constants/terms';
 import { GOOGLE_FORM_ENROLLMENT_URL } from '../../../shared/external-links';
 import { TermsAgreementService } from '../../../shared/terms/terms-agreement.service';
 
@@ -13,19 +14,15 @@ import { TermsAgreementService } from '../../../shared/terms/terms-agreement.ser
 export class Terms {
   private readonly termsAgreementService = inject(TermsAgreementService);
 
+  protected readonly copy = TERMS_PAGE_COPY;
+  protected readonly sections = TERMS_SECTIONS;
   protected readonly enrollmentFormUrl = GOOGLE_FORM_ENROLLMENT_URL;
-  protected readonly reachedEnd = signal(false);
-  protected readonly canProceed = computed(() => this.reachedEnd() && !!this.enrollmentFormUrl);
+  protected readonly agreedToTerms = signal(false);
+  protected readonly canProceed = computed(() => this.agreedToTerms());
 
-  protected onScroll(event: Event): void {
-    const element = event.target as HTMLElement;
-    const threshold = 24;
-    const reachedBottom =
-      element.scrollTop + element.clientHeight >= element.scrollHeight - threshold;
-
-    if (reachedBottom) {
-      this.reachedEnd.set(true);
-    }
+  protected updateAgreement(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.agreedToTerms.set(input.checked);
   }
 
   protected acceptTerms(): void {
@@ -34,6 +31,9 @@ export class Terms {
     }
 
     this.termsAgreementService.accept();
-    window.open(this.enrollmentFormUrl, '_blank', 'noopener,noreferrer');
+
+    if (this.enrollmentFormUrl) {
+      window.open(this.enrollmentFormUrl, '_blank', 'noopener,noreferrer');
+    }
   }
 }

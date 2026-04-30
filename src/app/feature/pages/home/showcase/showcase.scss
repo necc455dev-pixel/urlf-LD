@@ -4,20 +4,43 @@
 }
 
 .showcase {
-  display: grid;
-  gap: 1.25rem;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--color-paper-2);
+  padding-block: var(--section-space);
+}
+
+.showcase__inner {
+  width: min(100%, var(--page-max-width));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .showcase__header {
-  display: grid;
-  gap: 0.5rem;
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
 }
 
 .showcase__eyebrow {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.6em;
   color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+.showcase__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--color-ink);
+}
+
+.showcase__lead {
+  max-width: 40rem;
+  margin-inline: auto;
+  color: var(--color-sub);
+  font-size: 0.95rem;
+  line-height: 2.1;
 }

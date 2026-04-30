@@ -1,24 +1,24 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { LibsModule } from './feature/libs/libs';
+import { RouterOutlet } from '@angular/router';
+import {  SideNav, Bento } from './feature/libs/libs';
 import { SideNavItem } from './feature/libs/side-nav/side-nav';
 import { Breadcrumbs } from './shared/ui/breadcrumbs/breadcrumbs';
-import { GOOGLE_FORM_ENROLLMENT_URL } from './shared/external-links';
+import { EnrollementButtonBiaGoogleForm } from "./feature/libs/enrollement-button-bia-google-form/enrollement-button-bia-google-form";
 
 @Component({
   selector: 'urlf-root',
-  imports: [RouterOutlet, RouterLink, Breadcrumbs, LibsModule],
+  imports: [RouterOutlet, Breadcrumbs, SideNav, Bento, EnrollementButtonBiaGoogleForm],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
   protected readonly isSideNavOpen = signal(false);
-  protected readonly enrollmentFormUrl = GOOGLE_FORM_ENROLLMENT_URL;
   protected readonly navItems: readonly SideNavItem[] = [
-    { label: 'Home', href: '/home' },
-    { label: 'Login', href: '/login' },
-    { label: 'My page', href: '/mypage' },
-    { label: 'Sign up', href: '/sign-up' },
+    { label: 'ホーム', href: '/home' },
+    { label: '申込み', href: '/terms' },
+    // { label: 'Login', href: '/login' },
+    // { label: 'My page', href: '/mypage' },
+    // { label: 'Sign up', href: '/sign-up' },
     { label: '利用規約', href: '/terms' },
   ];
 

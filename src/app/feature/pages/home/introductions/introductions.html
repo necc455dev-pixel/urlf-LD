@@ -1,14 +1,23 @@
-<section class="introductions surface">
-  <div class="introductions__header">
-    <p class="introductions__eyebrow">Introduction</p>
-    <h2>あなたの物語を静かに残す</h2>
-  </div>
+<section class="introductions">
+  <div class="introductions__inner">
+    <div class="introductions__header">
+      <span class="introductions__eyebrow">CONCEPT</span>
+      <h2 class="introductions__title">語られなかった日々を、<br />一冊の物語に。</h2>
+      <p class="introductions__lead">
+        喜びも、迷いも、誰かに伝えたかった想いも。<br />
+        あなたが歩んできた一日一日を、丁寧に聴き取り、<br />
+        世界にひとつの小説として綴ります。
+      </p>
+    </div>
 
-  <div class="introductions__grid">
-    <article class="introductions__card">
-      <h3>丁寧にヒアリングを行い、1冊の本にしてあなたのお手元に届けます。</h3>
-      <p>選任の編集者が丁寧にヒアリングと確認を行い、シンプルな外装で静かにあなたの物語を伝えます。</p>
-      <p>作成した本はあなたのお手元にだけお届けします。大切なご家族やご友人にあなたがお渡しできます。</p>
-    </article>
+    <ol class="introductions__steps">
+      @for (step of steps; track step.id) {
+        <li class="introductions__step">
+          <span class="introductions__num">{{ step.id }}</span>
+          <h3 class="introductions__step-title">{{ step.title }}</h3>
+          <p class="introductions__step-desc">{{ step.description }}</p>
+        </li>
+      }
+    </ol>
   </div>
 </section>

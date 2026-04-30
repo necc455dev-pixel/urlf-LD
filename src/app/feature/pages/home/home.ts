@@ -1,15 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { Bento } from '../../libs/bento/bento';
-import { Prose } from '../../libs/prose/prose';
-import { SideNav, type SideNavItem } from '../../libs/side-nav/side-nav';
+import { Cta } from './cta/cta';
+import { Faq } from './faq/faq';
+import { Flow } from './flow/flow';
 import { Introductions } from './introductions/introductions';
 import { Showcase } from './showcase/showcase';
 import { Top } from './top/top';
+import { Voice } from './voice/voice';
 import { Wellcome } from './wellcome/wellcome';
 
 @Component({
   selector: 'urlf-home',
-  imports: [Prose, Top, Introductions, Showcase, Wellcome],
+  imports: [Top, Introductions, Showcase, Flow, Voice, Faq, Cta, Wellcome],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
