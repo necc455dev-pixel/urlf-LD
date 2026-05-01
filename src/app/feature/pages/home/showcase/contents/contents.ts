@@ -24,7 +24,7 @@ export class Contents {
       id: 'message',
       nameJa: 'メッセージ',
       nameEn: 'MESSAGE',
-      priceLabel: '80,000',
+      priceLabel: '120,000',
       volumeLabel: '〜 約10,000文字',
       description:
         '一つひとつのフレーズに余白を持たせ、読み手に豊かな解釈の余地を残します。多くを語らないからこそ、行間に滲む想いが受け取り手の心へ長く残ります。',
@@ -35,7 +35,7 @@ export class Contents {
       id: 'short',
       nameJa: '短　編',
       nameEn: 'SHORT STORY',
-      priceLabel: '80,000',
+      priceLabel: '160,000',
       volumeLabel: '10,000 〜 20,000文字',
       description:
         '登場人物は1〜6人。読み手が手に取りやすく、あなたの物語を簡潔に、けれど確かな厚みをもって伝えます。',
@@ -47,7 +47,7 @@ export class Contents {
       id: 'long',
       nameJa: '長　編',
       nameEn: 'LONG STORY',
-      priceLabel: '120,000',
+      priceLabel: '200,000',
       volumeLabel: '20,000 〜 100,000文字',
       description:
         '細かい描写とダイナミックな文章構成で、あなたの物語を余すことなく伝えます。歩んでこられた日々を、本格的な小説作品として綴ります。',
